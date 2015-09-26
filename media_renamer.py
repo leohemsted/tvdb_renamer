@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# pylint: disable=C0103
 import os
 import re
 import csv
@@ -6,13 +8,13 @@ import sys
 if len(sys.argv) == 1:
     print("""
     media_renamer renames files according to tvdb data stored tab delimited in data.tsv. The folder
-    provided must only contain media files that match this pattern.
+    provided must only contain media files that match the provided regex.
 
     Usage: python3 media_renamer.py path regex dry_run
 
     path: The folder containing the media
     regex: A regex that can be used to extract the episode numbers of the current naming convention
-    dry_run: if this is present, doesn't actually rename.
+    dry_run: don't move the files, just print out renaming plan
     """)
     sys.exit(0)
 directory = sys.argv[1]
@@ -52,8 +54,6 @@ for fname in os.listdir():
     print(fname, '->', new)
     if not dry_run:
         os.rename(fname, new)
-
-print('DRY RUN: ', dry_run)
 
 # ###### DOUBLE EP CODE:
 # num = int(re.search(regex, fname).group(1)) - 1

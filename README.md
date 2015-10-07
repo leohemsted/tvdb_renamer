@@ -23,8 +23,8 @@ Example data from [Rick and Morty Season 1](http://thetvdb.com/?tab=season&serie
 then run `python media_renamer.py folder regex [dry_run]` where folder is the path the media is stored in, and regex is a regex used to identify the existing episode numbers. eg:
 
 ```
-$ python media_renamer.py /q/Videos/TV\ Shows/Rick\ and\ Morty/Season\ 1 "e(\d+)"
-Renaming media files in q:\Videos\TV Shows\Rick and Morty\Season 1
+$ python media_renamer.py /d/videos/tv/rick_and_morty/season_1 "e(\d+)"
+Renaming media files in d:\videos\tv\rick_and_morty\season_1
 rick.and.morty.s01e01-720p.mkv -> s01e01 - Pilot.mkv
 rick.and.morty.s01e02-720p.mkv -> s01e02 - Lawnmower Dog.mkv
 rick.and.morty.s01e03-720p.mkv -> s01e03 - Anatomy Park.mkv

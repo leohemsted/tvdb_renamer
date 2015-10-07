@@ -19,7 +19,7 @@ if len(sys.argv) == 1:
     sys.exit(0)
 directory = sys.argv[1]
 regex = sys.argv[2]
-dry_run = len(sys.argv) > 2
+dry_run = len(sys.argv) > 3
 
 if not os.path.isdir(directory):
     raise ValueError('{} is not a valid directory'.format(directory))

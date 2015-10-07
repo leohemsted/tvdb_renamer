@@ -38,7 +38,7 @@ with open('data.tsv', 'r', encoding='utf-8') as data:
     for c in r'\/:*?<>|':
         for ep in eps:
             if c in ep[2]:
-                raise Exception('{} found in {}'.format(c, ep))
+                raise ValueError('Illegal character {} found in {}'.format(c, ep))
 
 print('DRY RUN: ', dry_run)
 os.chdir(directory)
